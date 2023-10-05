@@ -1,20 +1,20 @@
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Image, StyleSheet, Text, TextInput, View ,ScrollView} from 'react-native'
 import React from 'react'
 import pattern from '../../assets/pattern.png';
 import {button1} from '../common/button'
 import {head1,head2,formgroup,label,input,link,link2,input1} from '../common/formcss'
 import logo from '../../assets/mainlogo.png';
-const Signup = () => {
+const Signup = ({navigation}) => {
   return (
     <View style={styles.container}>
         <Image style={styles.patternbg} source={pattern}/>
         <View style={styles.container1}>
             <View style={styles.s1}>
             </View>
-            <View style={styles.s2}>
+            <ScrollView style={styles.s2}>
                 <Text style={head1}>Create a new Account</Text>
                 <Text style={link2}>Already Registered? &nbsp;
-                    <Text style={link}>
+                    <Text style={link} onPress={()=>navigation.navigate('welcome')}>
                         Login here
                     </Text>
                 </Text>
@@ -52,7 +52,7 @@ const Signup = () => {
                         />
                     </View>
                 <Text style={button1}>Signup</Text>
-            </View>
+            </ScrollView>
         </View>
     </View>
   )

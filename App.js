@@ -3,13 +3,21 @@ import { StyleSheet, Text, View } from 'react-native';
 import Welcome from './src/screens/Welcome';
 import Login from './src/screens/Login';
 import Signup from './src/screens/Signup';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Login/> */}
-      <Signup/>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="welcome" component={Welcome} options={{headerShown:false}}/>
+          <Stack.Screen name="login" component={Login}  options={{headerShown:false}}/>
+          <Stack.Screen name="signup" component={Signup}  options={{headerShown:false}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 

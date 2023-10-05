@@ -4,14 +4,14 @@ import pattern from '../../assets/pattern.png';
 import {button1} from '../common/button'
 import {head1,head2,formgroup,label,input,link,link2} from '../common/formcss'
 import logo from '../../assets/mainlogo.png';
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
         <Image style={styles.patternbg} source={pattern}/>
         <View style={styles.container1}>
             <View style={styles.s1}>
                 <Image style={styles.logo} source={logo}/>
-                <Text style={styles.h1}>Used2, Inc</Text>
+                <Text style={styles.h1} onPress={()=>navigation.navigate('welcome')}>Used2, Inc</Text>
                 <Text style={styles.small1}> Buying and selling online</Text>
             </View>
             <View style={styles.s2}>
@@ -34,7 +34,7 @@ const Login = () => {
                 </View>
                 <Text style={button1}>Login</Text>
                 <Text style={link2}>Don't have an account?&nbsp;
-                        <Text style={link}>
+                        <Text style={link} onPress={()=>navigation.navigate('signup')}> 
                             Create a new account
                         </Text>
                 </Text>
